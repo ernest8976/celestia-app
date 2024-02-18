@@ -1,6 +1,9 @@
 # stage 1 Generate celestia-appd Binary
 FROM docker.io/golang:1.21.0-alpine3.17 as builder
 # hadolint ignore=DL3018
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+
 RUN apk update && apk add --no-cache \
     gcc \
     git \
