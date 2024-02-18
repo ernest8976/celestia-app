@@ -6,6 +6,10 @@ ARG TARGETARCH
 
 ENV CGO_ENABLED=0
 ENV GO111MODULE=on
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+RUN go env -w GOPROXY=https://goproxy.cn,direct
+
 # hadolint ignore=DL3018
 RUN apk update && apk add --no-cache \
     gcc \
