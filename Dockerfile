@@ -42,3 +42,4 @@ USER ${USER_NAME}
 EXPOSE 26656 26657 1317 9090
 
 ENTRYPOINT [ "/bin/bash", "/opt/entrypoint.sh" ]
+CMD [ "celestia-appd" ]
