@@ -9,13 +9,10 @@ RUN apk update && apk add --no-cache \
     git \
     linux-headers \
     make \
-    musl-dev
+    musl-dev \
 
-WORKDIR /src
-
-COPY go.mod go.sum ./
-
-RUN go mod download
+COPY . /celestia-app
+WORKDIR /celestia-app
 RUN make build
 
 # stage 2
