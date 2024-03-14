@@ -2,7 +2,7 @@
 FROM docker.io/golang:1.21.0-alpine3.17 as builder
 # hadolint ignore=DL3018
 
-RUN apk update && apk add --no-cache \
+RUN uname -a && apk update && apk add --no-cache \
     gcc \
     git \
     linux-headers \
@@ -24,7 +24,6 @@ ENV CELESTIA_HOME=/home/${USER_NAME}
 # hadolint ignore=DL3018
 RUN apk update && apk add --no-cache \
     bash \
-    # Creates a user with $UID and $GID=$UID
     && adduser ${USER_NAME} \
     -D \
     -g ${USER_NAME} \
