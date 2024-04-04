@@ -101,14 +101,14 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "celestia"
+	AccountAddressPrefix = "cele"
 	Name                 = "celestia-app"
 	// BondDenom defines the native staking token denomination.
 	BondDenom = appconsts.BondDenom
 	// BondDenomAlias defines an alias for BondDenom.
 	BondDenomAlias = "microtia"
 	// DisplayDenom defines the name, symbol, and display value of the Celestia token.
-	DisplayDenom = "TIA"
+	DisplayDenom = "CELE"
 )
 
 // These constants are derived from the above variables.

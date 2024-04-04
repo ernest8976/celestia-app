@@ -73,7 +73,7 @@ const (
 	MaxShareVersion = 127
 
 	// BondDenom defines the native staking denomination
-	BondDenom = "utia"
+	BondDenom = "ucele"
 )
 
 var (
