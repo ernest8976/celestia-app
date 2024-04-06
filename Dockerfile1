@@ -9,7 +9,7 @@ RUN apk update && apk add --no-cache \
     git \
     linux-headers \
     make \
-    musl-dev \
+    musl-dev
 
 COPY . /celestia-app
 WORKDIR /celestia-app

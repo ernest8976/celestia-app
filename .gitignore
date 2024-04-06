@@ -16,3 +16,5 @@ square/testdata
 **/*.html
 .release-env
 **/*.DS_Store
+
+/ibc-go/

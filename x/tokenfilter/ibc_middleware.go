@@ -54,7 +54,9 @@ func (m *tokenFilterMiddleware) OnRecvPacket(
 	// our channel and port it means that the token was originally sent from this
 	// chain. Note that this firewall prevents routing of other transactions through
 	// the chain so from this logic, the denom has to be a native denom.
-	if transfertypes.ReceiverChainIsSource(packet.GetSourcePort(), packet.GetSourceChannel(), data.Denom) {
+	// hunter add: temperaily open this switch
+	// todo: close it when necesseary
+	if !transfertypes.ReceiverChainIsSource(packet.GetSourcePort(), packet.GetSourceChannel(), data.Denom) {
 		return m.IBCModule.OnRecvPacket(ctx, packet, relayer)
 	}
 
